@@ -1,5 +1,5 @@
-const data = require('./data');
-
+const data = require('./data.json');
+const fs = require('fs');
 class Controller {
 
     //mostra todas as questões
@@ -8,10 +8,11 @@ class Controller {
 
         //chama promise que recebe os dados das questoes
 
-        return new Promise((resolve, _) =>resolve(data));
+        return new Promise((resolve, _) =>resolve(data).then(function(v){
+            return v;
+        }));
     }
 
-    // mostra uma questão através do id
     async getOneQuestion(id) {
 
         // retorna promise que busca questão através da função find 
@@ -19,7 +20,7 @@ class Controller {
         return new Promise((resolve, reject) => {
             let question = data.find((question) => question.id === parseInt(id));
             if (question){
-                resolve(todo);
+                resolve(question);
             } else {
 
                 reject(`questão com ${id} nao encontrada`);
@@ -37,7 +38,13 @@ class Controller {
                id: Math.floor(4 + Math.random() * 10),
                ...question,
            };
-           resolve(newQuestion);
+           resolve(newQuestion).then(fs.writeFile('./data.json', JSON.stringify(newQuestion), err =>{
+               if(err){
+                console.log(err);
+               } else{
+                   console.log('sucessfuly written!');
+               }
+           }));
        });
    } 
 

@@ -1,0 +1,21 @@
+{
+  "name": "quizz-api-node-vanilla-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jrevoredo42/quizz-api-node-vanilla-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jrevoredo42/quizz-api-node-vanilla-/issues"
+  },
+  "homepage": "https://github.com/Jrevoredo42/quizz-api-node-vanilla-#readme"
+}

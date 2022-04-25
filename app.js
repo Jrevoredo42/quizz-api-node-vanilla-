@@ -5,7 +5,7 @@ const Question  = require('./controller');
 const { getReqData } = require('./utils');
 
 // declaração da porta através de dotenv
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 //chamada do modulo http, com uma callback assíncrona contendo parametros de request e response
 const server = http.createServer(async (req,res) => {
